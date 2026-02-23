@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
+/* Load JS config for editor tooling + plugin compatibility */
+@config "../../tailwind.config.ts";
+
+/* ─────────────────────────────────────────────
+   Komodo Sauces Design System — CSS Custom Properties
+   These mirror the @theme tokens and are available
+   for use in arbitrary CSS outside of Tailwind utilities.
+───────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --komodo-black:    #0A0A0A;
+  --komodo-red:      #C41E1E;
+  --komodo-white:    #FAFAFA;
+  --komodo-gold:     #D4A853;
+  --komodo-red-dark: #8B1515;
+  --komodo-red-glow: #FF3333;
+
+  /* Neutral scale */
+  --gray-900: #1A1A1A;
+  --gray-800: #2A2A2A;
+  --gray-600: #6B6B6B;
+  --gray-400: #9B9B9B;
+  --gray-100: #F0F0F0;
+
+  /* Semantic aliases */
+  --color-background: var(--komodo-black);
+  --color-surface:    var(--gray-900);
+  --color-foreground: var(--komodo-white);
+  --color-accent:     var(--komodo-red);
+  --color-highlight:  var(--komodo-gold);
+  --color-muted:      var(--gray-600);
+  --color-border:     var(--gray-800);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─────────────────────────────────────────────
+   Tailwind v4 Theme Extensions
+   All tokens here are available as utility classes
+   (e.g. bg-komodo-red, text-komodo-gold, etc.)
+───────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-komodo-black:    #0A0A0A;
+  --color-komodo-red:      #C41E1E;
+  --color-komodo-white:    #FAFAFA;
+  --color-komodo-gold:     #D4A853;
+  --color-komodo-red-dark: #8B1515;
+  --color-komodo-red-glow: #FF3333;
+  --color-gray-900:        #1A1A1A;
+  --color-gray-800:        #2A2A2A;
+  --color-gray-600:        #6B6B6B;
+  --color-gray-400:        #9B9B9B;
+  --color-gray-100:        #F0F0F0;
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* 8px grid — extended spacing tokens */
+  --spacing-18:  4.5rem;   /* 72px  */
+  --spacing-22:  5.5rem;   /* 88px  */
+  --spacing-26:  6.5rem;   /* 104px */
+  --spacing-30:  7.5rem;   /* 120px */
+  --spacing-34:  8.5rem;   /* 136px */
+  --spacing-38:  9.5rem;   /* 152px */
+  --spacing-42:  10.5rem;  /* 168px */
+  --spacing-46:  11.5rem;  /* 184px */
+  --spacing-50:  12.5rem;  /* 200px */
+  --spacing-54:  13.5rem;  /* 216px */
+  --spacing-58:  14.5rem;  /* 232px */
+  --spacing-62:  15.5rem;  /* 248px */
+  --spacing-66:  16.5rem;  /* 264px */
+  --spacing-70:  17.5rem;  /* 280px */
+  --spacing-78:  19.5rem;  /* 312px */
+  --spacing-82:  20.5rem;  /* 328px */
+  --spacing-86:  21.5rem;  /* 344px */
+  --spacing-90:  22.5rem;  /* 360px */
+  --spacing-94:  23.5rem;  /* 376px */
+  --spacing-98:  24.5rem;  /* 392px */
+  --spacing-100: 25rem;    /* 400px */
+  --spacing-104: 26rem;    /* 416px */
+  --spacing-108: 27rem;    /* 432px */
+  --spacing-112: 28rem;    /* 448px */
+  --spacing-120: 30rem;    /* 480px */
+  --spacing-128: 32rem;    /* 512px */
+  --spacing-144: 36rem;    /* 576px */
+  --spacing-160: 40rem;    /* 640px */
+  --spacing-176: 44rem;    /* 704px */
+  --spacing-192: 48rem;    /* 768px */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─────────────────────────────────────────────
+   Base Styles
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--komodo-black);
+  color: var(--komodo-white);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--komodo-red);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--komodo-red);
+  color: var(--komodo-white);
 }
