@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const AskKomodo = dynamic(
-  () =>
-    import("@/components/chat/AskKomodo").then((m) => ({
-      default: m.AskKomodo,
-    })),
-  { ssr: false },
-);
+import { AskPageClient } from "./AskPageClient";
 
 export const metadata: Metadata = {
   title: "Ask Komodo",
@@ -25,5 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function AskPage() {
-  return <AskKomodo />;
+  return <AskPageClient />;
 }
