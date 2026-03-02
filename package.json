@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node node_modules/next-sitemap/bin/next-sitemap.mjs",
     "start": "next start",
     "lint": "eslint"
   },

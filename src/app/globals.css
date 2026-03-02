@@ -128,3 +128,23 @@ html {
   background-color: var(--komodo-red);
   color: var(--komodo-white);
 }
+
+/* ─────────────────────────────────────────────
+   Custom Cursors
+   Only applied on fine-pointer devices (mouse/trackpad).
+   Mobile touch screens have no cursor — skip the asset load.
+───────────────────────────────────────────── */
+@media (pointer: fine) {
+  body {
+    cursor: url('/cursors/bottle.svg') 16 0, auto;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    cursor: url('/cursors/bottle-pour.svg') 8 12, pointer;
+  }
+}

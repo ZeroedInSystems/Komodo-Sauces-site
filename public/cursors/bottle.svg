@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Dark glass bottle body: cap → neck → shoulder → body → rounded bottom -->
+  <path d="M14 0H18V8L22 13V28Q22 31 16 31Q10 31 10 28V13L14 8Z" fill="#1a1a2e"/>
+  <!-- Red sauce filling the lower portion -->
+  <path d="M10 19V28Q10 31 16 31Q22 31 22 28V19Z" fill="#C41E1E"/>
+  <!-- Subtle glass highlight on body left -->
+  <line x1="12" y1="14" x2="12" y2="27" stroke="#fff" stroke-width=".8" stroke-linecap="round" opacity=".15"/>
+</svg>
